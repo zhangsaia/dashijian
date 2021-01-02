@@ -10,7 +10,9 @@ $.ajaxPrefilter(function (options) {
 
 
     options.complete = function (res) {
-        if (res.responseJSOM.status === 1 && res.responseJSON.message === '身份验证失败！') {
+        // console.log('执行了');
+        if (res.responseJSON.status === 1 && res.responseJSON.message ===
+            '身份认证失败！') {
             localStorage.removeItem('token')
             location.href = '/login1.html'
         }
